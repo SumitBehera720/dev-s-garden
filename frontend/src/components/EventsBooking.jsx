@@ -20,7 +20,8 @@ const EventsBooking = () => {
     setStatus({ loading: true, success: false, error: null });
     
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      // Hardcoded API URL for production to ensure bookings work on Vercel
+      const apiUrl = 'https://dev-s-garden.onrender.com';
       const response = await fetch(`${apiUrl}/api/reservations`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
